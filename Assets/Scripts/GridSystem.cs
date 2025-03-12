@@ -1,4 +1,5 @@
 using System;
+using Unity.Collections;
 using UnityEngine;
 
 public class GridSystem
@@ -84,5 +85,20 @@ public class GridSystem
     {
         Vector3 worldPositionWithOriginOffset = worldPosition - origin;
         return new GridPosition(Mathf.RoundToInt(Mathf.Floor(worldPositionWithOriginOffset.x / cellSize)), Mathf.RoundToInt(Mathf.Floor(worldPositionWithOriginOffset.z / cellSize)));
+    }
+
+    public GridObject GetGridObject(int x, int z)
+    {
+        return gridObjectArray[x, z];
+    }
+
+    public GridObject GetGridObject(GridPosition gridPosition)
+    {
+        return gridObjectArray[gridPosition.x, gridPosition.z];
+    }
+
+    public GridDebugObject CreateDebugObjects(Transform debugObjectPrefab)
+    {
+        
     }
 }

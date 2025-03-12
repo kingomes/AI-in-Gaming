@@ -7,11 +7,6 @@ public class GridDebugObject : MonoBehaviour
 
     [SerializeField] TextMeshPro textMeshPro;
 
-    public void SetGridObject(GridObject gridObject)
-    {
-        this.gridObject = gridObject;
-    }
-
     // Update is called once per frame
     private void Update()
     {
@@ -19,5 +14,10 @@ public class GridDebugObject : MonoBehaviour
         {
             textMeshPro.text = gridObject.ToString();
         }
+    }
+
+    public void SetGridObject(GridObject gridObject)
+    {
+        this.gridObject = gridObject;
     }
 }
